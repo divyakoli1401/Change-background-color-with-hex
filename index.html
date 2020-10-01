@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+
+        .center {
+            margin-top: 50vh;
+            margin-left: 100vh;
+        }
+        
+        body{
+            background-color: palevioletred;
+        }
+
+    </style>
+
+</head>
+<body id="bodycolor">
+
+    <div class ="center">
+
+    <h1 id= "Displayhexvalue"></h1>
+    
+    <button type="button" class="btn btn-dark">Click me</button>
+
+    </div>
+
+    <script>
+
+        const button = document.querySelector("button")
+        const body = document.querySelector("body")
+        const displayvalue = document.querySelector("#Displayhexvalue")
+        const hexvalues = [1,2,3,4,5,6,7,8,9,0,"a","b","c","d","e","f"]
+
+       
+
+        function changeBackground(){
+            var hexNumber="#"
+            for (let i=0 ; i < 6 ; i++){
+
+                hexNumber += hexvalues[Math.floor(Math.random()*hexvalues.length)]
+                
+            }
+
+            body.style.backgroundColor = hexNumber
+            displayvalue.textContent = hexNumber
+
+               
+            
+
+        }
+        button.addEventListener("click",changeBackground)   
+
+
+
+    </script>
+
+</body>
+</html>
